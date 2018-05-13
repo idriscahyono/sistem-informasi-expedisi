@@ -1,4 +1,4 @@
-<?php $this->load->view('template/header') ?>
+<?php $this->load->view('template/headerKaryawan') ?>
 <section id="main-content">
     <section class="wrapper">
         <div class="table-agile-info">

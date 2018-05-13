@@ -4,10 +4,10 @@
         <div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     Tambah Pelanggan
+     Tambah Karyawan
     </div>
     <br>
-<?php echo form_open_multipart('pelanggan/tambah'); ?>
+<?php echo form_open_multipart('karyawan/tambah'); ?>
 <?php echo validation_errors() ?>
 <div class="form-group row">
 	<label for="Nama" class="col-sm-2 col-form-label">Nama</label>
@@ -66,6 +66,7 @@
 <div class="form-group row">
 	<label for="col-sm-2"></label>
 	<input type="submit" class="btn btn-primary" value="Tambah">
+	<a href="<?php echo site_url('karyawan') ?>" class="btn btn-danger">Cancel</a>
 </div>
 </form>
 <!-- load footer -->

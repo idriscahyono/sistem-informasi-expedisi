@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <head>
-<title>Admin</title>
+<title>Karyawan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--logo start-->
 <div class="brand">
     <a href="" class="logo">
-        Admin
+        Karyawan
     </a>
 </div>
 <!--logo end-->
@@ -75,10 +75,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a class="" href="<?php echo base_url('PelangganKaryawan')?>">
-                        <i class="fa fa-group"></i>
-                        <span>Karyawan</span>
-                    </a>
                 </li>
                 
                 <li class="sub-menu">
@@ -87,8 +83,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Tambah Data</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="<?php echo base_url('/karyawan')?>">Tambah Karyawan</a></li>
-                        <li><a href="<?php echo base_url('/admin')?>">Tambah Admin</a></li>
                         <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
                     </ul>
                 </li>

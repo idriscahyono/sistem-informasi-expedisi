@@ -2,6 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pelanggan_model extends CI_Model {
+	public $table = 'pelanggan';
+    public $idData = 'id_pelanggan';
+    public $order = 'DESC';
+
+    function __construct()
+    {
+        parent::__construct();
+    }
 
 	public function getData()
 	{
@@ -17,6 +25,17 @@ class Pelanggan_model extends CI_Model {
 		//untuk merubah table menjadi array
 		return $query->result_array();
 	}
+
+	public function getDataGambar($table)
+	{
+		return $this->db->get($table);
+	}
+
+	 public function get_by_id($idData)
+    {
+        $this->db->where($this->idData, $idData);
+        return $this->db->get($this->table)->row();
+    }
 
 
 	public function getDataWhereId($id)

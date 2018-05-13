@@ -5,7 +5,7 @@
 	
 		public function index()
 		{
-			$this->load->view('home/index.php');
+			$this->load->view('home/index');
 		}
 	
 	}

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pelanggan extends CI_Controller {
+class PelangganKaryawan extends CI_Controller {
 
 	//konstruktor (statement yang selalu dipanggil pada setiap function)
 	function __construct() {
@@ -20,7 +20,7 @@ class Pelanggan extends CI_Controller {
 		terlah direturn pada fungsi getData() pada Pelanggan_m */
 		$data['getData'] = $this->Pelanggan_model->getData();
 		// memanggil view 'pelanggan/pelanggan.php' dan diberi variable $data
-		$this->load->view('pelanggan/pelanggan.php',$data);
+		$this->load->view('pelangganKaryawan/pelanggan.php',$data);
 	}
 
     public function read($idData) 
@@ -38,10 +38,10 @@ class Pelanggan extends CI_Controller {
 		'Password' => $row->Password,
 		'Image' => $row->image,
 	    );
-            $this->load->view('pelanggan/read', $data);
+            $this->load->view('pelangganKaryawan/read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('pelanggan'));
+            redirect(site_url('pelangganKaryawan'));
         }
     }
 
@@ -71,7 +71,7 @@ class Pelanggan extends CI_Controller {
 		// if jika kita belum melakukan submit
 		if($this->form_validation->run()==FALSE){
 			//menampilkan view 'pelanggan/tambah.php'
-			$this->load->view('pelanggan/tambah.php',$data); 
+			$this->load->view('pelangganKaryawan/tambah.php',$data); 
 		}
 		// jika kita sudah melalukan submit
 		else{
@@ -80,10 +80,10 @@ class Pelanggan extends CI_Controller {
 				//memanggil fungsi insertData pada model
 				$this->Pelanggan_model->insertData($upload['file']['file_name']);
 				//redirect / pergi ke halaman 'pelanggan'
-				redirect('pelanggan');
+				redirect('pelangganKaryawan');
 			}else{ // Jika proses upload gagal
 				$data['message'] = $upload['error'];
-				$this->load->view('pelanggan/tambah.php',$data); 
+				$this->load->view('pelangganKaryawan/tambah.php',$data); 
 			}
 		}
 	}
@@ -121,7 +121,7 @@ class Pelanggan extends CI_Controller {
 		// if jika kita belum melakukan submit
 		if($this->form_validation->run()==FALSE){
 			//menampilkan view 'pelanggan/ubah.php'
-			$this->load->view('pelanggan/ubah',$data);
+			$this->load->view('pelangganKaryawan/ubah',$data);
 		}
 		// jika kita sudah melalukan submit
 		else{
@@ -130,7 +130,7 @@ class Pelanggan extends CI_Controller {
 				//memanggil fungsi insertData pada model
 				$this->Pelanggan_model->updateData($id);
 			//redirect / pergi ke halaman 'pelanggan'
-				redirect('pelanggan');
+				redirect('pelangganKaryawan');
 			}
 			else
 			{
@@ -140,7 +140,7 @@ class Pelanggan extends CI_Controller {
 					redirect('pelanggan');
 				}else{ 
 					$data['error_upload'] = $upload['error'];
-					$this->load->view('pelanggan/ubah',$data);
+					$this->load->view('pelangganKaryawan/ubah',$data);
 				}
 			}
 		}
@@ -153,6 +153,6 @@ class Pelanggan extends CI_Controller {
 	{
 		//memanggil fungsi hapusData pada model
 		$this->Pelanggan_model->hapusData($id);
-		redirect('pelanggan');
+		redirect('pelangganKaryawan');
 	}
 }

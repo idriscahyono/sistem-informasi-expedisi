@@ -1,181 +1,125 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+class Karyawan extends CI_Controller {
 
-class Karyawan extends CI_Controller
-{
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
         $this->load->model('Karyawan_model');
-        $this->load->library('form_validation');
+        $this->load->helper('form');    
     }
 
     public function index()
     {
-        $q = urldecode($this->input->get('q', TRUE));
-        $start = intval($this->input->get('start'));
-        
-        if ($q <> '') {
-            $config['base_url'] = base_url() . 'karyawan/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'karyawan/index.html?q=' . urlencode($q);
-        } else {
-            $config['base_url'] = base_url() . 'karyawan/index.html';
-            $config['first_url'] = base_url() . 'karyawan/index.html';
-        }
+        $data['getData'] = $this->Karyawan_model->getData();
+        $this->load->view('karyawan/karyawan.php',$data);
+    }
 
-        $config['per_page'] = 100;
-        $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Karyawan_model->total_rows($q);
-        $karyawan = $this->Karyawan_model->get_limit_data($config['per_page'], $start, $q); 
-
-        $this->load->library('pagination');
-        $this->pagination->initialize($config);
-
-        $data = array(
-            'karyawan_data' => $karyawan,
-            'q' => $q,
-            'pagination' => $this->pagination->create_links(),
-            'total_rows' => $config['total_rows'],
-            'start' => $start,
+    public function read($idData) 
+    {
+        $row = $this->Karyawan_model->get_by_id($idData);
+        if ($row) {
+            $data = array(
+        'ID' => $row->id_karyawan,
+        'Nama' => $row->Nama,
+        'JenisKelamin' => $row->JenisKelamin,
+        'Alamat' => $row->Alamat,
+        'NoHp' => $row->NoHp,
+        'Email' => $row->Email,
+        'Username' => $row->Username,
+        'Password' => $row->Password,
+        'Image' => $row->image,
         );
-        $this->load->view('karyawan/karyawan_list', $data);
-    }
-
-    public function read($id) 
-    {
-        $row = $this->Karyawan_model->get_by_id($id);
-        if ($row) {
-            $data = array(
-		'ID' => $row->ID,
-		'Nama' => $row->Nama,
-		'JenisKelamin' => $row->JenisKelamin,
-		'Alamat' => $row->Alamat,
-		'NoHp' => $row->NoHp,
-		'Email' => $row->Email,
-		'Username' => $row->Username,
-		'Password' => $row->Password,
-	    );
-            $this->load->view('karyawan/karyawan_read', $data);
+            $this->load->view('karyawan/read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('karyawan'));
         }
     }
 
-    public function create() 
+    public function tambah()
     {
-        $data = array(
-        'button' => 'Create',
-        'action' => site_url('karyawan/create_action'),
-	    'ID' => set_value('ID'),
-	    'Nama' => set_value('Nama'),
-	    'JenisKelamin' => set_value('JenisKelamin'),
-	    'Alamat' => set_value('Alamat'),
-	    'NoHp' => set_value('NoHp'),
-	    'Email' => set_value('Email'),
-	    'Username' => set_value('Username'),
-	    'Password' => set_value('Password'),
-	);
-        $this->load->view('karyawan/karyawan_form', $data);
-    }
-    
-    public function create_action() 
-    {
-        $this->_rules();
+        $data['message'] = "";
+        $this->load->library("form_validation");
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->create();
-        } else {
-            $data = array(
-		'Nama' => $this->input->post('Nama',TRUE),
-		'JenisKelamin' => $this->input->post('JenisKelamin',TRUE),
-		'Alamat' => $this->input->post('Alamat',TRUE),
-		'NoHp' => $this->input->post('NoHp',TRUE),
-		'Email' => $this->input->post('Email',TRUE),
-		'Username' => $this->input->post('Username',TRUE),
-		'Password' => $this->input->post('Password',TRUE),
-	    );
+        $this->form_validation->set_rules('Nama','Nama','required');
+        $this->form_validation->set_rules('JenisKelamin','JenisKelamin','required');
+        $this->form_validation->set_rules('Alamat','Alamat','required');
+        $this->form_validation->set_rules('NoHp','NoHp','required');
+        $this->form_validation->set_rules('Email','Email','required');
+        $this->form_validation->set_rules('Username','Username','required');
+        $this->form_validation->set_rules('Password','Password','required');
 
-            $this->Karyawan_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('karyawan'));
+  
+        $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+
+        if($this->form_validation->run()==FALSE){
+
+            $this->load->view('karyawan/tambah.php',$data); 
         }
-    }
-    
-    public function update($id) 
-    {
-        $row = $this->Karyawan_model->get_by_id($id);
 
-        if ($row) {
-            $data = array(
-        'button' => 'Update',
-        'action' => site_url('karyawan/update_action'),
-		'ID' => set_value('ID', $row->ID),
-		'Nama' => set_value('Nama', $row->Nama),
-		'JenisKelamin' => set_value('JenisKelamin', $row->JenisKelamin),
-		'Alamat' => set_value('Alamat', $row->Alamat),
-		'NoHp' => set_value('NoHp', $row->NoHp),
-		'Email' => set_value('Email', $row->Email),
-		'Username' => set_value('Username', $row->Username),
-		'Password' => set_value('Password', $row->Password),
-	    );
-            $this->load->view('karyawan/karyawan_form', $data);
-        } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('karyawan'));
-        }
-    }
-    
-    public function update_action() 
-    {
-        $this->_rules();
+        else{
+            $upload = $this->Karyawan_model->upload();
+            if($upload['result'] == "success"){ 
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID', TRUE));
-        } else {
-            $data = array(
-		'Nama' => $this->input->post('Nama',TRUE),
-		'JenisKelamin' => $this->input->post('JenisKelamin',TRUE),
-		'Alamat' => $this->input->post('Alamat',TRUE),
-		'NoHp' => $this->input->post('NoHp',TRUE),
-		'Email' => $this->input->post('Email',TRUE),
-		'Username' => $this->input->post('Username',TRUE),
-		'Password' => $this->input->post('Password',TRUE),
-	    );
+                $this->Karyawan_model->insertData($upload['file']['file_name']);
 
-            $this->Karyawan_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('karyawan'));
-        }
-    }
-    
-    public function delete($id) 
-    {
-        $row = $this->Karyawan_model->get_by_id($id);
-
-        if ($row) {
-            $this->Karyawan_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('karyawan'));
-        } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('karyawan'));
+                redirect('karyawan');
+            }else{ 
+                $data['message'] = $upload['error'];
+                $this->load->view('karyawan/tambah.php',$data); 
+            }
         }
     }
 
-    public function _rules() 
+    public function ubah($id)
     {
-	$this->form_validation->set_rules('Nama', 'nama', 'trim|required');
-	$this->form_validation->set_rules('JenisKelamin', 'jeniskelamin', 'trim|required');
-	$this->form_validation->set_rules('Alamat', 'alamat', 'trim|required');
-	$this->form_validation->set_rules('NoHp', 'nohp', 'trim|required');
-	$this->form_validation->set_rules('Email', 'email', 'trim|required');
-	$this->form_validation->set_rules('Username', 'username', 'trim|required');
-	$this->form_validation->set_rules('Password', 'password', 'trim|required');
-	$this->form_validation->set_rules('ID', 'ID', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+        $data['message'] = "";
+
+        $this->load->library("form_validation");
+
+        $this->form_validation->set_rules('id_karyawan','ID','required');
+        $this->form_validation->set_rules('Nama','Nama','required');
+        $this->form_validation->set_rules('JenisKelamin','JenisKelamin','required');
+        $this->form_validation->set_rules('Alamat','Alamat','required');
+        $this->form_validation->set_rules('NoHp','NoHp','required');
+        $this->form_validation->set_rules('Email','Email','required');
+        $this->form_validation->set_rules('Username','Username','required');
+        $this->form_validation->set_rules('Password','Password','required');
+
+        $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+
+        $data['getData'] = $this->Karyawan_model->getDataWhereId($id)[0];
+
+        if($this->form_validation->run()==FALSE){
+
+            $this->load->view('karyawan/ubah',$data);
+        }
+
+        else{
+            if ($_FILES['image']['name'] == "")
+            {
+                $this->Karyawan_model->updateData($id);
+
+                redirect('karyawan');
+            }
+            else
+            {
+                $upload = $this->Karyawan_model->upload();
+                if($upload['result'] == "success"){ 
+                    $this->karyawan_model->updateData($id,$upload['file']['file_name']);
+                    redirect('karyawan');
+                }else{ 
+                    $data['error_upload'] = $upload['error'];
+                    $this->load->view('karyawan/ubah',$data);
+                }
+            }
+        }
     }
 
+    public function hapus($id)
+    {
+        $this->Karyawan_model->hapusData($id);
+        redirect('karyawan');
+    }
 }

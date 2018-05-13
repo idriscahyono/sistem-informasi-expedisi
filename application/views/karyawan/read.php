@@ -20,7 +20,7 @@
             <tr><td>Password</td><td><?php echo $Password; ?></td></tr>
         </table>
         <div class="text-right">
-            <tr><td></td><td><a href="<?php echo site_url('karyawan') ?>" class="btn btn-danger">Cancel</a></td></tr>
+            <tr><td></td><td><a href="<?php echo base_url('karyawan') ?>" class="btn btn-danger">Cancel</a></td></tr>
         </div>
     </div>
   </div>

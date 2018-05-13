@@ -1,13 +1,9 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
-
-class Karyawan_model extends CI_Model
-{
-
+class Karyawan_model extends CI_Model {
     public $table = 'karyawan';
-    public $id = 'ID';
+    public $idData = 'id_karyawan';
     public $order = 'DESC';
 
     function __construct()
@@ -15,67 +11,96 @@ class Karyawan_model extends CI_Model
         parent::__construct();
     }
 
-    // get all
-    function get_all()
+    public function getData()
     {
-        $this->db->order_by($this->id, $this->order);
-        return $this->db->get($this->table)->result();
+        
+        $this->db->select('*');
+ 
+        $this->db->from("karyawan");
+
+        $query = $this->db->get();
+     
+        return $query->result_array();
     }
 
-    // get data by id
-    function get_by_id($id)
+    public function get_total()
     {
-        $this->db->where($this->id, $id);
+        return $this->db->count_all("karyawan");
+    }
+
+    public function getDataGambar($limit = FALSE, $offset = FALSE)
+    {
+        if($limit)
+        {
+            $this->db->limit($limit, $offset);
+        }
+        
+        return $this->db->get("karyawan");
+    }
+
+     public function get_by_id($idData)
+    {
+        $this->db->where($this->idData, $idData);
         return $this->db->get($this->table)->row();
     }
-    
-    // get total rows
-    function total_rows($q = NULL) {
-    $this->db->like('ID', $q);
-	$this->db->or_like('Nama', $q);
-	$this->db->or_like('JenisKelamin', $q);
-	$this->db->or_like('Alamat', $q);
-	$this->db->or_like('NoHp', $q);
-	$this->db->or_like('Email', $q);
-	$this->db->or_like('Username', $q);
-	$this->db->or_like('Password', $q);
-	$this->db->from($this->table);
-        return $this->db->count_all_results();
-    }
 
-    // get data with limit and search
-    function get_limit_data($limit, $start = 0, $q = NULL) {
-    $this->db->order_by($this->id, $this->order);
-    $this->db->like('ID', $q);
-	$this->db->or_like('Nama', $q);
-	$this->db->or_like('JenisKelamin', $q);
-	$this->db->or_like('Alamat', $q);
-	$this->db->or_like('NoHp', $q);
-	$this->db->or_like('Email', $q);
-	$this->db->or_like('Username', $q);
-	$this->db->or_like('Password', $q);
-	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
-    }
 
-    // insert data
-    function insert($data)
+    public function getDataWhereId($id)
     {
-        $this->db->insert($this->table, $data);
+        $this->db->select('*');
+        $this->db->from("karyawan");
+        $this->db->where('id_karyawan',$id);
+        return $this->db->get()->result_array();
     }
 
-    // update data
-    function update($id, $data)
+    public function insertData($upload_name)
     {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
+
+        $data = $this->input->post();
+
+        $data['image'] = $upload_name;
+
+        $this->db->insert("karyawan",$data);
     }
 
-    // delete data
-    function delete($id)
+    public function updateData($id,$upload_name=null)   
     {
-        $this->db->where($this->id, $id);
-        $this->db->delete($this->table);
+        $data = $this->input->post();
+
+        if($upload_name!=null)
+            $data['image'] = $upload_name;
+
+        $this->db->where('id_karyawan',$id);
+
+        if($this->db->update("karyawan",$data)){
+            return "Berhasil";
+        }
     }
 
+    public function hapusData($id)
+    {
+
+        $this->db->where('id_karyawan',$id);
+
+        if($this->db->delete("karyawan")){
+            return "Berhasil";
+        }
+    }
+
+    public function upload(){
+        $config['upload_path'] = './img/karyawan/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '2048';
+        $config['remove_space'] = TRUE;
+        $this->load->library('upload', $config);
+        if($this->upload->do_upload('image')){
+            $return = array('result' => 'success', 'file' => $this->upload->data(),
+            'error' => '');
+            return $return;
+        }else{
+            $return = array('result' => 'failed', 'file' => '', 'error' =>
+            $this->upload->display_errors());
+            return $return;
+        }
+    }
 }
