@@ -18,4 +18,4 @@
 	  Sesuai Dengan Konfigurasi Xampp Anda
 
 ### Template By	: 
-	-[colorlib](https://colorlib.com/)
+	-[colorlib] (https://colorlib.com/)
