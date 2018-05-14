@@ -1,9 +1,18 @@
-##########################################
-:beginner: Code Igniter Expedisi :beginner:
-##########################################
+### :beginner: Code Igniter Expedisi :beginner:
 
-******************************************
-Dibuat Oleh: 1. Idris Cahyono
-						 2. Angelita Justien
-						 3. Andi Putra Wijaya
-******************************************
+### Dibuat Oleh	: 	
+	- Idris Cahyono
+	- Angelita Justien
+	- Andi Putra Wijaya
+		
+### System Requiretments :
+	- Xampp v.3.2.2
+	- Browser Chrome or Firefox
+
+### Installation :
+	- Download Project
+	- Pindahkan Project Di Folder Htdocs Di Xampp Anda
+	
+### Configuration :
+	- Jangan Lupa Rubah Configurasi Di Folder Config/Database.php Dan Config/Config.php
+	  Sesuai Dengan Konfigurasi Xampp Anda
