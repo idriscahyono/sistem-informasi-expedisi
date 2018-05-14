@@ -1,4 +1,4 @@
-## :beginner: Code Igniter Expedisi :beginner:
+## :beginner: Codeigniter Expedisi :beginner:
 
 ### Dibuat Oleh	: 	
 	- Idris Cahyono
