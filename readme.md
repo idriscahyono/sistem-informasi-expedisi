@@ -16,3 +16,6 @@
 ### Configuration :
 	- Jangan Lupa Rubah Configurasi Di Folder Config/Database.php Dan Config/Config.php
 	  Sesuai Dengan Konfigurasi Xampp Anda
+
+### Template By	: 
+	-https://colorlib.com/
