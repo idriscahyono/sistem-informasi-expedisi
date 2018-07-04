@@ -12,7 +12,20 @@ class Karyawan extends CI_Controller {
     public function index()
     {
         $data['getData'] = $this->Karyawan_model->getData();
-        $this->load->view('karyawan/karyawan.php',$data);
+        $levelUser = $this->session->userdata('levelUser');
+        if ($levelUser['level'] == 1)
+        {
+            $this->load->view('karyawan/karyawan.php',$data);
+        }
+        else if ($levelUser['level'] == 2)
+        {
+            redirect('karyawan/karyawan.php',$data);
+        }
+        else
+        {
+            $this->load->view('user/login');
+        }
+        
     }
 
     public function read($idData) 
@@ -78,7 +91,6 @@ class Karyawan extends CI_Controller {
 
         $this->load->library("form_validation");
 
-        $this->form_validation->set_rules('id_karyawan','ID','required');
         $this->form_validation->set_rules('Nama','Nama','required');
         $this->form_validation->set_rules('JenisKelamin','JenisKelamin','required');
         $this->form_validation->set_rules('Alamat','Alamat','required');

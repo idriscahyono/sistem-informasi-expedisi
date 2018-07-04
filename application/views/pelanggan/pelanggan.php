@@ -17,8 +17,6 @@
 				<th>ID</th>
 				<th>Nama</th>
 				<th>Jenis Kelamin</th>
-				<th>Username</th>
-				<th>Password</th>
 				<th>Gambar</th>
 				<th>Aksi</th>
 			</tr>
@@ -30,12 +28,10 @@
 					<td><?php echo $value['id_pelanggan'] ?></td>
 					<td><?php echo $value['Nama'] ?></td>
 					<td><?php echo $value['JenisKelamin'] ?></td>
-					<td><?php echo $value['Username'] ?></td>
-					<td><?php echo $value['Password'] ?></td>
 					<td><?php echo $value['image']?></td>
 					<td>
 						<!-- --AKSI-- -->
-						<a href="<?php echo base_url('pelanggan/read/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-info">Read</a>
+<!-- 						<a href="<?php echo base_url('pelanggan/read/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-info">Read</a> -->
 						<a href="<?php echo base_url('pelanggan/ubah/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-success">Update</a>
 						<a href="<?php echo base_url('pelanggan/hapus/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-danger">Delete</a>
 					</td>
