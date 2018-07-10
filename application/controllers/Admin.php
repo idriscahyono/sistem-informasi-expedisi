@@ -12,7 +12,19 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['getData'] = $this->Admin_model->getData();
-		$this->load->view('admin/admin',$data);
+		$levelUser = $this->session->userdata('levelUser');
+		if ($levelUser['level'] == 1)
+		{
+			$this->load->view('admin/admin',$data);
+		}
+		else if ($levelUser['level'] == 2)
+		{
+			redirect('pelanggan');
+		}
+		else
+		{
+			$this->load->view('user/login');
+		}
 	}
 	public function tambah()
 	{

@@ -14,30 +14,28 @@
 		<thead>
 			<tr>
 				<!-- Sesuaikan Column Table -->
-				<th>ID</th>
-				<th>Nama</th>
-				<th>Jenis Kelamin</th>
-				<th>Gambar</th>
-				<th>Aksi</th>
+				<th>id</th>
+				<th>Tanggal</th>
+				<th>Alamat</th>
+				<th>Penerima</th>
+				<th>Telepon Penerima</th>
+				<th>Nama Barang</th>
+				<th>Nama Pelanggan</th>
+				<th>Jenis</th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($getData as $key => $value): ?>
+			<?php foreach ($transaksi as $key => $value): ?>
 				<tr>
 					<!-- Sesuaikan Column Table -->
-					<td><?php echo $value['id_pelanggan'] ?></td>
+					<td><?php echo $value['id_transaksi'] ?></td>
+					<td><?php echo $value['tanggal_transaksi'] ?></td>
+					<td><?php echo $value['alamat_rinci'] ?></td>
+					<td><?php echo $value['penerima'] ?></td>
+					<td><?php echo $value['telepon_penerima'] ?></td>
+					<td><?php echo $value['nama_barang']?></td>
 					<td><?php echo $value['Nama'] ?></td>
-					<td><?php echo $value['JenisKelamin'] ?></td>
-					<td><?php echo $value['Username'] ?></td>
-					<td><?php echo $value['Password'] ?></td>
-					<td><?php echo $value['Image']?></td>
-					<td><?php echo $value['image']?></td>
-					<td>
-						<!-- --AKSI-- -->
-						<a href="<?php echo base_url('pelanggan/read/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-info">Read</a>
-						<a href="<?php echo base_url('pelanggan/ubah/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-success">Update</a>
-						<a href="<?php echo base_url('pelanggan/hapus/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-danger">Delete</a>
-					</td>
+					<td><?php echo $value['Nama_jenis']?></td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

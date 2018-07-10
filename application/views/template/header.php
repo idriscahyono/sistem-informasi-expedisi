@@ -38,12 +38,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <section id="container">
+    <?php if($this->session->flashdata('user_registered')): ?>
+            <?php echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</div>'; ?>
+       <?php endif; ?>
+
+       <?php if($this->session->flashdata('login_failed')): ?>
+            <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+       <?php endif; ?>
+
+       <?php if($this->session->flashdata('user_loggedout')): ?>
+            <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
+       <?php endif; ?>
+        <?php if($this->session->flashdata('user_loggedin')): ?>
+            <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
+       <?php endif; ?>
 <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
     <a href="" class="logo">
-        Admin
+        AAI
     </a>
 </div>
 <!--logo end-->
@@ -52,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <ul class="nav pull-right top-menu">
         <!-- user login dropdown start-->
         <li class="dropdown">
-            <a href="<?php echo site_url('login')?>">
+            <a href="<?php echo site_url('user/logout')?>">
                 <img alt="" src="<?php echo base_url()."assets/images/exit.png"; ?>">
                 <span class="username">Exit</span>
             </a>
@@ -75,14 +89,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a class="" href="<?php echo base_url('PelangganKaryawan')?>">
+<!--                     <a class="" href="<?php echo base_url('PelangganKaryawan')?>">
                         <i class="fa fa-group"></i>
                         <span>Karyawan</span>
+<<<<<<< HEAD
                     </a>
                     <a class="" href="<?php echo base_url('Transaction/barang')?>">
                         <i class="fa fa-group"></i>
                         <span>Transaksi</span>
                     </a>
+=======
+                    </a> -->
+>>>>>>> origin/idris
                 </li>
                 
                 <li class="sub-menu">
@@ -91,9 +109,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Tambah Data</span>
                     </a>
                     <ul class="sub">
+                        <?php $levelUser = $this->session->userdata('levelUser');
+                        if ($levelUser['level'] == 1) { ?>
                         <li><a href="<?php echo base_url('/karyawan')?>">Tambah Karyawan</a></li>
                         <li><a href="<?php echo base_url('/admin')?>">Tambah Admin</a></li>
                         <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
+                        <?php } else if ($levelUser['level'] == 2) {?>
+                        <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
+                        <?php } else { echo base_url('user/login');} ?>
                     </ul>
                 </li>
         </div>

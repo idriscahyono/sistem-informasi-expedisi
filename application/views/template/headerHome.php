@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 						<div class="user_box ml-auto">
 							<div class="user_box_login user_box_link"><a href="<?php echo base_url('login')?>">login</a></div>
-							<div class="user_box_register user_box_link"><a href="#">register</a></div>
+							<div class="user_box_register user_box_link"><a href="<?php echo base_url('user/register') ?>">register</a></div>
 						</div>
 					</div>
 				</div>

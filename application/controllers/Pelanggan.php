@@ -19,8 +19,22 @@ class Pelanggan extends CI_Controller {
 		/* mengisi $data['getData'] berupa data yang 
 		terlah direturn pada fungsi getData() pada Pelanggan_m */
 		$data['getData'] = $this->Pelanggan_model->getData();
-		// memanggil view 'pelanggan/pelanggan.php' dan diberi variable $data
-		$this->load->view('pelanggan/pelanggan.php',$data);
+		$levelUser = $this->session->userdata('levelUser');
+		if ($levelUser['level'] == 1)
+		{
+			// memanggil view 'pelanggan/pelanggan.php' dan diberi variable $data
+			$this->load->view('pelanggan/pelanggan.php',$data);
+		}
+		else if ($levelUser['level'] == 2)
+		{
+			$this->load->view('pelanggan/pelanggan.php',$data);
+		}
+		else
+		{
+			$this->load->view('user/login');
+		}
+		
+		
 	}
 
     public function read($idData) 
