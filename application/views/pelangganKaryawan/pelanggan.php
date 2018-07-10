@@ -32,7 +32,7 @@
 					<td><?php echo $value['JenisKelamin'] ?></td>
 					<td><?php echo $value['Username'] ?></td>
 					<td><?php echo $value['Password'] ?></td>
-					<td><?php echo $value['image']?></td>
+					<td><?php echo $value['Image']?></td>
 					<td>
 						<!-- --AKSI-- -->
 						<a href="<?php echo base_url('pelanggan/read/'.$value['id_pelanggan']) ?>" class="btn btn-sm btn-info">Read</a>

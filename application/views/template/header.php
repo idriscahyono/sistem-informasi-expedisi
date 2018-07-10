@@ -79,6 +79,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-group"></i>
                         <span>Karyawan</span>
                     </a>
+                    <a class="" href="<?php echo base_url('Transaction/barang')?>">
+                        <i class="fa fa-group"></i>
+                        <span>Transaksi</span>
+                    </a>
                 </li>
                 
                 <li class="sub-menu">
