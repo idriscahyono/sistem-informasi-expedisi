@@ -10,6 +10,15 @@ class Transaction_model extends CI_Model {
         $this->db->join("jenis","transaksi.id_jenis=jenis.id");
         return $this->db->get("transaksi")->result();
     }
+    public function get_transaksi_pelanggan($id)
+    {
+        $this->db->select("transaksi.*,barang.nama_barang,barang.berat,pelanggan.Nama as nama_pelanggan,jenis.nama as nama_jenis,jenis.hargaperkilo");
+        $this->db->join("barang","transaksi.id_barang=barang.id_barang");
+        $this->db->join("pelanggan","transaksi.id_pelanggan=pelanggan.id_pelanggan");
+        $this->db->join("jenis","transaksi.id_jenis=jenis.id");
+        $this->db->where('id_pelanggan',$id);
+        return $this->db->get("transaksi")->result();
+    }
     public function get_transaksi_id($id)
     {
         $this->db->select("transaksi.*,barang.nama_barang,barang.berat,pelanggan.Nama as nama_pelanggan,jenis.nama as nama_jenis,jenis.hargaperkilo");
