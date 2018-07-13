@@ -105,53 +105,36 @@
 	<div class="container">
 		<div class="row">
 			<div class="col text-center">
-				<h2 class="section_title">PRICING</h2>
+				<h2 class="section_title">Contact</h2>
 			</div>
 		</div>
 		<div class="row offers_items text-center">
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-header" style="background-color: #f2c318;color:white">
-						<h3 class="card-title">Gold</h3>
-					</div>
-					<div class="card-body">
-						<h2>Rp 99999/bulan</h2>
-					</div>
-					<div class="card-body">
-						<h4>Jenis Kilat</h4>
-					</div>
-					<div class="card-body">
-						<h4>Jenis Reguler</h4>
-					</div>
-					<div class="card-body">
-						<h4>Jenis Ekonomis</h4>
-					</div>
-					<div class="card-body">
-						<a href="<?php echo base_url('user/register/4'); ?>">Daftar</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card" style="height: 100%;">
-					<div class="card-header" style="background-color: #b600ff;color:white">
-						<h3 class="card-title">Reguler</h3>
-					</div>
-					<div class="card-body">
-						<h3>Rp 10000/bulan</h3>
-					</div>
-					<div class="card-body">
-						<h4>Jenis Reguler</h4>
-					</div>
-					<div class="card-body">
-						<h4>Jenis Ekonomis</h4>
-					</div>
-					<div class="card-body">
-						<a href="<?php echo base_url('user/register'); ?>">Daftar</a>
-					</div>
-				</div>
-			</div>
-
-
+			<table class="table">
+				<tr>
+					<td class="text-right">Alamat</td>
+					<td class="text-left">Jln Kembang Kertas IV no 5</td>
+				</tr>
+				<tr>
+					<td class="text-right">Telp</td>
+					<td class="text-left">0987654321</td>
+				</tr>
+				<tr>
+					<td class="text-right">Email</td>
+					<td class="text-left">cs@aai.com</td>
+				</tr>
+				<tr>
+					<td class="text-right">Facebook</td>
+					<td class="text-left">AAI Express</td>
+				</tr>	
+				<tr>
+					<td class="text-right">Twitter</td>
+					<td class="text-left">@aai_express</td>
+				</tr>
+				<tr>	
+					<td class="text-right">Instagram</td>
+					<td class="text-left">@aai_express</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>

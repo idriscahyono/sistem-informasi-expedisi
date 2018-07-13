@@ -8,54 +8,61 @@
 <br>
 <br>
 <?php echo form_open_multipart('user/register'); ?>
+<div class="card">
+	<?php if ($this->uri->segment('3') != 4): ?>
+		<div class="card-header" style="background-color: #b600ff;color:white">Register Pelanggan Reguler</div>
+	<?php else: ?>	
+		<div class="card-header" style="background-color: #f2c318;color:white">Register Pelanggan Gold</div>
+	<?php endif ?>
+</div>
 <?php echo validation_errors() ?>
 <div class="form-group row">
 	<label for="Nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
 	<div class="col-sm-10">
 		<input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
-		<?php echo form_error('Nama') ?> <!-- menampilkan error saat rule Nama gagal -->
+		<?php echo form_error('nama') ?> <!-- menampilkan error saat rule Nama gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Email" class="col-sm-2 col-form-label">Email</label>
 	<div class="col-sm-10">
 	<input type="text" name="email" class="form-control" placeholder="Email">
-		<?php echo form_error('Email') ?> <!-- menampilkan error saat rule JenisKelamin gagal -->
+		<?php echo form_error('email') ?> <!-- menampilkan error saat rule JenisKelamin gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
 	<div class="col-sm-10">
 	<input type="text" name="alamat" class="form-control" placeholder="Alamat">
-		<?php echo form_error('Alamat') ?> <!-- menampilkan error saat rule Alamat gagal -->
+		<?php echo form_error('alamat') ?> <!-- menampilkan error saat rule Alamat gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Kode Pos" class="col-sm-2 col-form-label">Kode Pos</label>
 	<div class="col-sm-10">
-	<input type="text" name="kodePos" class="form-control" placeholder="Kode Pos">
-		<?php echo form_error('Kode Pos') ?> <!-- menampilkan error saat rule NoHp gagal -->
+	<input type="text" name="kodepos" class="form-control" placeholder="Kode Pos">
+		<?php echo form_error('kodepos') ?> <!-- menampilkan error saat rule NoHp gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Username" class="col-sm-2 col-form-label">Username</label>
 	<div class="col-sm-10">
 		<input type="text" name="username" class="form-control" placeholder="Username">
-		<?php echo form_error('Username') ?> <!-- menampilkan error saat rule Email gagal -->
+		<?php echo form_error('username') ?> <!-- menampilkan error saat rule Email gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Password" class="col-sm-2 col-form-label">Password</label>
 	<div class="col-sm-10">
 		<input type="text" name="password" class="form-control" placeholder="Password">
-		<?php echo form_error('Username') ?> <!-- menampilkan error saat rule Username gagal -->
+		<?php echo form_error('password') ?> <!-- menampilkan error saat rule Username gagal -->
 	</div>
 </div>
 <div class="form-group row">
 	<label for="Password" class="col-sm-2 col-form-label">Ulangi Password</label>
 	<div class="col-sm-10">
 	<input type="text" name="password2" class="form-control" placeholder="Konfirmasi Password">
-		<?php echo form_error('Password') ?> <!-- menampilkan error saat rule Password gagal -->
+		<?php echo form_error('password2') ?> <!-- menampilkan error saat rule Password gagal -->
 	</div>
 </div>
 <div class="form-group row">

@@ -12,8 +12,11 @@
 			$this->load->model('user_model');
 		}
 
-		public function register()
+		public function register($level=3)
 		{
+			if($level != 3 || $level != 4){
+				$level = 3;
+			}
 			$levelUser = $this->session->userdata('levelUser');
 			if ($levelUser['level'] == 1)
 			{
@@ -21,17 +24,17 @@
 			}
 			else
 			{
-				/*$this->form_validation->set_rules('nama', 'Nama', 'required');
+				$this->form_validation->set_rules('nama', 'Nama', 'required');
 				$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
 				$this->form_validation->set_rules('alamat', 'Alamat', 'required');
-				$this->form_validation->set_rules('kodePos', 'Kode Pos', 'required');
+				$this->form_validation->set_rules('kodepos', 'Kode Pos', 'required');
 				$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
 				$this->form_validation->set_rules('password', 'Password', 'required');
-				$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password]');*/
+				$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password]');
 
 				if ($this->form_validation->run() == TRUE) {
 					$encript_password = md5($this->input->post('password'));
-					$this->user_model->registered($encript_password);
+					$this->user_model->registered($encript_password,$level);
 
 					$this->session->set_flashdata('user_registered', 'Selamat Anda Telah Teregistrasi');
 					redirect('user/login');
@@ -51,9 +54,7 @@
 
 			if($this->form_validation->run() == FALSE)
 			{
-				
-				$this->load->view('user/login');
-				
+				$this->load->view('user/login');	
 			}
 			else
 			{
@@ -76,7 +77,11 @@
 						$this->session->set_userdata('levelUser', $data);
 
 						$this->session->set_flashdata('user_loggedin', 'Berhasil Login');
-						redirect('admin');
+						if($key['level'] == 1 || $key['level'] == 2){
+								redirect('admin');
+						}else{
+							redirect('Home');
+						}
 					}
 				}
 				else

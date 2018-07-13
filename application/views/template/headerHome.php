@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li class="main_nav_item"><a href="<?php echo base_url('about') ?>">Daftar Pegawai</a></li>
 								<!-- <li class="main_nav_item"><a href="offers.html"></a></li> -->
 								<li class="main_nav_item"><a href="">news</a></li>
-								<li class="main_nav_item"><a href="">contact</a></li>
+								<li class="main_nav_item"><a href="<?php echo base_url('contact') ?>">contact</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('pricing') ?>">Pricing</a></li>
 							
 							</ul>
