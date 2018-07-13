@@ -21,7 +21,7 @@ class Transaction extends CI_Controller {
 		}
 		else{
 			$id_barang = $this->Transaction_model->tambah_barang();
-			redirect('Transaction/transaksi/'.$id);
+			redirect('Transaction/transaksi/'.$id_barang);
 		}
 	}
 	public function transaksi($id)
