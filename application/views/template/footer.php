@@ -2,7 +2,7 @@
  <!-- footer -->
           <div class="footer">
             <div class="wthree-copyright">
-              <p>© 2018 Idris Cahyono-Polinema</p>
+              <p>© 2018 Idris Cahyono, Angelita Justien Jumadi, Andy Putra Wijaya Politeknik Negeri Malang</p>
             </div>
           </div>
   <!-- / footer -->

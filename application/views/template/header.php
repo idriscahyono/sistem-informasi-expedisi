@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="<?php echo base_url('/transaction/barang')?>">Transaksi</a></li>
                         <?php } else if ($levelUser['level'] == 2) {?>
                         <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
-                        <li><a href="<?php echo base_url('/transaction/barang')?>">Transaksi</a></li>
+                        <li><a href="<?php echo base_url('/transaction')?>">Transaksi</a></li>
                         <?php } else { echo base_url('user/login');} ?>
                     </ul>
                 </li>

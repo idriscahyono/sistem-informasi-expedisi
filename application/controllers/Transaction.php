@@ -8,7 +8,11 @@ class Transaction extends CI_Controller {
 		$this->load->model('Transaction_model');
 		$this->load->helper('form');	
 	}
-
+	public function index()
+	{
+		$data['transaksi'] = $this->Transaction_model->get_transaksi();
+		$this->load->view("transaksi/read",$data);
+	}
 	public function barang()
 	{
 		$this->load->library("form_validation");
@@ -38,8 +42,14 @@ class Transaction extends CI_Controller {
 			$this->load->view('transaksi/transaksi',$data);
 		}
 		else{
-			$id_barang = $this->Transaction_model->transaksi($id);
+			$id_transaksi = $this->Transaction_model->transaksi($id);
+			redirect("Transaction/complete/".$id_transaksi);
 		}
+	}
+	public function complete($id)
+	{
+		$data['transaksi'] = $this->Transaction_model->get_transaksi_id($id);
+		$this->load->view("transaksi/complete",$data);
 	}
 }
 
