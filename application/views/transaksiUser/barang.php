@@ -1,10 +1,17 @@
-<?php $this->load->view('template/header') ?>
+<?php $this->load->view('template/headerHome') ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Tambah Barang
 				</div>
 				<br>
 				<?php echo form_open("") ?>
@@ -41,4 +48,4 @@
 					$('#example').DataTable();
 				} );
 			</script>
-			<?php $this->load->view('template/footer') ?>
+<?php $this->load->view('template/footerHome') ?>

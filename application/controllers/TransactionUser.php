@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaction extends CI_Controller {
-
-	function __construct() {
+class TransactionUser extends CI_Controller {
+function __construct() {
 		parent::__construct();
 		$this->load->model('Transaction_model');
 		$this->load->helper('form');	
@@ -11,7 +10,7 @@ class Transaction extends CI_Controller {
 	public function index()
 	{
 		$data['transaksi'] = $this->Transaction_model->get_transaksi();
-		$this->load->view("transaksi/read",$data);
+		$this->load->view("transaksiUser/read",$data);
 	}
 	public function barang()
 	{
@@ -21,11 +20,11 @@ class Transaction extends CI_Controller {
 		$this->form_validation->set_rules('berat','berat','required');
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 		if($this->form_validation->run()==FALSE){
-			$this->load->view('transaksi/barang');
+			$this->load->view('transaksiUser/barang');
 		}
 		else{
 			$id_barang = $this->Transaction_model->tambah_barang();
-			redirect('Transaction/transaksi/'.$id_barang);
+			redirect('TransactionUser/transaksi/'.$id_barang);
 		}
 	}
 	public function transaksi($id)
@@ -39,20 +38,20 @@ class Transaction extends CI_Controller {
 		$this->form_validation->set_rules('telepon_penerima','telepon_penerima','required');
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 		if($this->form_validation->run()==FALSE){
-			$this->load->view('transaksi/transaksi',$data);
+			$this->load->view('transaksiUser/transaksi',$data);
 		}
 		else{
 			$id_transaksi = $this->Transaction_model->transaksi($id);
-			redirect("Transaction/complete/".$id_transaksi);
+			redirect("TransactionUser/complete/".$id_transaksi);
 		}
 	}
 	public function complete($id)
 	{
 		$data['transaksi'] = $this->Transaction_model->get_transaksi_id($id);
-		$this->load->view("transaksi/complete",$data);
+		$this->load->view("transaksiUser/complete",$data);
 	}
+
 }
 
-	
-	/* End of file Admin.php */
-	/* Location: ./application/controllers/Admin.php */
+/* End of file TransactionUser.php */
+/* Location: ./application/controllers/TransactionUser.php */ 

@@ -3,15 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model {
 
-	public function registered($encript_password)
+	public function registered($encript_password,$level)
 	{
 		$data = array(
 			'nama' => $this->input->post('nama'),
 			'email' => $this->input->post('email'),
 			'alamat' => $this->input->post('alamat'),
-			'kodepos' => $this->input->post('kodePos'),
+			'kodepos' => $this->input->post('kodepos'),
 			'username' => $this->input->post('username'),
-			'password' => $encript_password
+			'password' => $encript_password,
+			'level' => $level
 		);
 
 		return $this->db->insert('users', $data);
@@ -19,10 +20,10 @@ class User_model extends CI_Model {
 
 	public function login($username, $password)
 	{
-		// $this->db->where('username', $username);
-		// $this->db->where('password', $password);
-		$result = $this->db->query("select * from users where username = '".$username."' AND password = '".$password."'");
-		// $result = $this->db->get('users');
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		//$result = $this->db->query("select * from users where username = '".$username."' AND password = '".$password."'");
+		$result = $this->db->get('users');
 
 		if($result->num_rows() == 1)
 		{
@@ -33,6 +34,25 @@ class User_model extends CI_Model {
 			return false;
 		}
 	}
+
+	public function getData()
+	{
+		$this->db->select('*');
+		$this->db->from("users");
+
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function hapusData($id)
+    {
+
+        $this->db->where('user_id',$id);
+
+        if($this->db->delete("users")){
+            return "Berhasil";
+        }
+    }
 	
 
 }

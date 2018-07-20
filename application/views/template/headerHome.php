@@ -32,20 +32,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col d-flex flex-row">
-						<div class="phone">+45 345 3324 56789</div>
+						<div class="phone">+0351-443-443</div>
 						<div class="social">
 							<ul class="social_list">
-								<li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								<li class="social_list_item"><a href="https://www.facebook.com/idris.cahyono"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="social_list_item"><a href="https://twitter.com/idriscahyonoo?lang=id"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="user_box ml-auto">
 							<div class="user_box_login user_box_link"><a href="<?php echo base_url('login')?>">login</a></div>
-							<div class="user_box_register user_box_link"><a href="<?php echo base_url('user/register') ?>">register</a></div>
+							<div class="user_box_register user_box_link"><a href="<?php echo base_url('pricing') ?>">register</a></div>
 						</div>
 					</div>
 				</div>
@@ -63,11 +59,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="<?php echo base_url('home') ?>">home</a></li>
+								<li class="main_nav_item"><a href="<?php echo base_url('home') ?>">Home</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('about') ?>">Daftar Pegawai</a></li>
-								<!-- <li class="main_nav_item"><a href="offers.html"></a></li> -->
-								<li class="main_nav_item"><a href="">news</a></li>
-								<li class="main_nav_item"><a href="">contact</a></li>
+								<li class="main_nav_item"><a href="<?php echo base_url('pricing') ?>">Pricing</a></li>
+								<li class="main_nav_item"><a href="<?php echo base_url('contact') ?>">Contact</a></li>
+								
+							
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">

@@ -33,16 +33,16 @@ class Karyawan extends CI_Controller {
         $row = $this->Karyawan_model->get_by_id($idData);
         if ($row) {
             $data = array(
-                'ID' => $row->id_karyawan,
-                'Nama' => $row->Nama,
-                'JenisKelamin' => $row->JenisKelamin,
-                'Alamat' => $row->Alamat,
-                'NoHp' => $row->NoHp,
-                'Email' => $row->Email,
-                'Username' => $row->Username,
-                'Password' => $row->Password,
-                'Image' => $row->image,
-            );
+        'ID' => $row->id_karyawan,
+        'Nama' => $row->Nama,
+        'JenisKelamin' => $row->JenisKelamin,
+        'Alamat' => $row->Alamat,
+        'NoHp' => $row->NoHp,
+        'Email' => $row->Email,
+        'Username' => $row->Username,
+        'Password' => $row->Password,
+        'Image' => $row->image,
+        );
             $this->load->view('karyawan/read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -63,7 +63,7 @@ class Karyawan extends CI_Controller {
         $this->form_validation->set_rules('Username','Username','required');
         $this->form_validation->set_rules('Password','Password','required');
 
-        
+  
         $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
         if($this->form_validation->run()==FALSE){

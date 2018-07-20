@@ -24,30 +24,30 @@
 				</div>
 
 				<!-- Slider Item -->
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
+<!-- 				<div class="owl-item home_slider_item">
+	<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
 
-					<div class="home_slider_content text-center">
-						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
-							<h1>discover</h1>
-							<h1>the world</h1>
-							<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
-						</div>
-					</div>
-				</div>
+	<div class="home_slider_content text-center">
+		<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
+			<h1>discover</h1>
+			<h1>the world</h1>
+			<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
+		</div>
+	</div>
+</div> -->
 
 				<!-- Slider Item -->
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
+<!-- 				<div class="owl-item home_slider_item">
+	<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
 
-					<div class="home_slider_content text-center">
-						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
-							<h1>discover</h1>
-							<h1>the world</h1>
-							<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
-						</div>
-					</div>
-				</div>
+	<div class="home_slider_content text-center">
+		<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
+			<h1>discover</h1>
+			<h1>the world</h1>
+			<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
+		</div>
+	</div>
+</div> -->
 
 			</div>
 			
@@ -89,13 +89,13 @@
 
 			<!-- Home Slider Dots -->
 
-			<div class="home_slider_dots">
-				<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
-					<li class="home_slider_custom_dot active"><div></div>01.</li>
-					<li class="home_slider_custom_dot"><div></div>02.</li>
-					<li class="home_slider_custom_dot"><div></div>03.</li>
-				</ul>
-			</div>
+<!-- 			<div class="home_slider_dots">
+	<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+		<li class="home_slider_custom_dot active"><div></div>01.</li>
+		<li class="home_slider_custom_dot"><div></div>02.</li>
+		<li class="home_slider_custom_dot"><div></div>03.</li>
+	</ul>
+</div> -->
 			
 		</div>
 
@@ -116,15 +116,15 @@
 
 					<div class="search_tabs_container">
 						<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-							<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/suitcase.png" alt=""><span>Lacak Kiriman</span></div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/bus.png" alt="">Tarif Kiriman</div>
+							<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/bus.png" alt=""><span>Tarif Kiriman</span></div>
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/bus.png" alt="">Tarif Kiriman</div> -->
 
 						</div>		
 					</div>
 
 					<!-- Search Panel -->
 
-					<div class="search_panel active">
+<!-- 					<div class="search_panel active">
 						<form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
 								<div>Lacak Kiriman</div>
@@ -133,11 +133,11 @@
 
 							<button class="button search_button">Tracking<span></span><span></span><span></span></button>
 						</form>
-					</div>
+					</div> -->
 
 					<!-- Search Panel -->
 
-					<div class="search_panel">
+					<div class="search_panel active">
 						<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
 								<div>Jenis Barang</div>
@@ -158,166 +158,220 @@
 			</div>
 		</div>		
 	</div>
-
 	<div class="offers">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h2 class="section_title">PROMO</h2>
-				</div>
-			</div>
-			<div class="row offers_items">
-
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@kensuarez -->
-									<div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
-									<div class="offer_name"><a href="#">grand castle</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$70<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by Egzon Bytyqi -->
-									<div class="offers_image_background" style="background-image:url(images/offer_2.jpg)"></div>
-									<div class="offer_name"><a href="#">turkey hills</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$50<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@nevenkrcmarek -->
-									<div class="offers_image_background" style="background-image:url(images/offer_3.jpg)"></div>
-									<div class="offer_name"><a href="#">island dream</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$90<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@mantashesthaven -->
-									<div class="offers_image_background" style="background-image:url(images/offer_4.jpg)"></div>
-									<div class="offer_name"><a href="#">AAIt</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$30<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<h2 class="section_title">PROMO</h2>
 			</div>
 		</div>
-	</div>
+		<div class="row offers_items text-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header" style="background-color: #f2c318;color:white">
+						<h3 class="card-title">Gold</h3>
+					</div>
+					<div class="card-body">
+						<h2>Rp 99999/bulan</h2>
+					</div>
+					<div class="card-body">
+						<h4>Pengiriman Kilat</h4>
+					</div>
+					<div class="card-body">
+						<h4>Pengiriman Reguler</h4>
+					</div>
+					<div class="card-body">
+						<h4>Target Pengiriman 24 Jam</h4>
+					</div>
+					<div class="card-body">
+						<a href="<?php echo base_url('user/register/4'); ?>">Daftar</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card" style="height: 100%;">
+					<div class="card-header" style="background-color: #b600ff;color:white">
+						<h3 class="card-title">Reguler</h3>
+					</div>
+					<div class="card-body">
+						<h3>Rp 10000/bulan</h3>
+					</div>
+					<div class="card-body">
+						<h4>Pengiriman Reguler</h4>
+					</div>
+					<div class="card-body">
+						<h4>Target Pengiriman 3 Sampai 4 Hari</h4>
+					</div>
+					<div class="card-header" >
+						<a href="<?php echo base_url('user/registerReguler'); ?>">Daftar</a>
+					</div>
+				</div>
+			</div>
 
+
+		</div>
+	</div>
+</div>
+
+<!-- 	<div class="offers">
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<h2 class="section_title">PROMO</h2>
+			</div>
+		</div>
+		<div class="row offers_items">
+
+			Offers Item
+			<div class="col-lg-6 offers_col">
+				<div class="offers_item">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="offers_image_container">
+								Image by https://unsplash.com/@kensuarez
+								<div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
+								<div class="offer_name"><a href="#">grand castle</a></div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="offers_content">
+								<div class="offers_price">$70<span>per night</span></div>
+								<div class="rating_r rating_r_4 offers_rating">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+								<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
+								<div class="offers_icons">
+									<ul class="offers_icons_list">
+										<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+									</ul>
+								</div>
+								<div class="offers_link"><a href="offers.html">read more</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			Offers Item
+			<div class="col-lg-6 offers_col">
+				<div class="offers_item">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="offers_image_container">
+								Image by Egzon Bytyqi
+								<div class="offers_image_background" style="background-image:url(images/offer_2.jpg)"></div>
+								<div class="offer_name"><a href="#">turkey hills</a></div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="offers_content">
+								<div class="offers_price">$50<span>per night</span></div>
+								<div class="rating_r rating_r_4 offers_rating">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+								<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
+								<div class="offers_icons">
+									<ul class="offers_icons_list">
+										<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+									</ul>
+								</div>
+								<div class="offers_link"><a href="offers.html">read more</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			Offers Item
+			<div class="col-lg-6 offers_col">
+				<div class="offers_item">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="offers_image_container">
+								Image by https://unsplash.com/@nevenkrcmarek
+								<div class="offers_image_background" style="background-image:url(images/offer_3.jpg)"></div>
+								<div class="offer_name"><a href="#">island dream</a></div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="offers_content">
+								<div class="offers_price">$90<span>per night</span></div>
+								<div class="rating_r rating_r_4 offers_rating">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+								<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
+								<div class="offers_icons">
+									<ul class="offers_icons_list">
+										<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+									</ul>
+								</div>
+								<div class="offers_link"><a href="offers.html">read more</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			Offers Item
+			<div class="col-lg-6 offers_col">
+				<div class="offers_item">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="offers_image_container">
+								Image by https://unsplash.com/@mantashesthaven
+								<div class="offers_image_background" style="background-image:url(images/offer_4.jpg)"></div>
+								<div class="offer_name"><a href="#">AAIt</a></div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="offers_content">
+								<div class="offers_price">$30<span>per night</span></div>
+								<div class="rating_r rating_r_4 offers_rating">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+								<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
+								<div class="offers_icons">
+									<ul class="offers_icons_list">
+										<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+									</ul>
+								</div>
+								<div class="offers_link"><a href="offers.html">read more</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+ -->
 <?php $this->load->view('template/footerHome'); ?>

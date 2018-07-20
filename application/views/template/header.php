@@ -24,11 +24,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- calendar -->
 <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/monthly.css">
 
-<!-- //calendar -->
-<!-- //font-awesome icons -->
-
 <!-- Data Table -->
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.js">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js">
 <link rel="stylesheet" href="<?php echo base_url()."assets/" ?>css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="<?php echo base_url()."assets/" ?>css/jquery.dataTables.min">
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.dataTables.min.js"></script>
 
@@ -92,15 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--                     <a class="" href="<?php echo base_url('PelangganKaryawan')?>">
                         <i class="fa fa-group"></i>
                         <span>Karyawan</span>
-<<<<<<< HEAD
-                    </a>
-                    <a class="" href="<?php echo base_url('Transaction/barang')?>">
-                        <i class="fa fa-group"></i>
-                        <span>Transaksi</span>
-                    </a>
-=======
                     </a> -->
->>>>>>> origin/idris
                 </li>
                 
                 <li class="sub-menu">
@@ -113,9 +111,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         if ($levelUser['level'] == 1) { ?>
                         <li><a href="<?php echo base_url('/karyawan')?>">Tambah Karyawan</a></li>
                         <li><a href="<?php echo base_url('/admin')?>">Tambah Admin</a></li>
-                        <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
+                        <li><a href="<?php echo base_url('/user')?>">Pelanggan</a></li>
+                        <li><a href="<?php echo base_url('/transaction')?>">Transaksi</a></li>
                         <?php } else if ($levelUser['level'] == 2) {?>
-                        <li><a href="<?php echo base_url('/pelanggan')?>">Tambah Pelanggan</a></li>
+                        <li><a href="<?php echo base_url('/user')?>">Pelanggan</a></li>
+                        <li><a href="<?php echo base_url('/transaction')?>">Transaksi</a></li>
                         <?php } else { echo base_url('user/login');} ?>
                     </ul>
                 </li>
