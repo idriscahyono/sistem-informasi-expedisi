@@ -10,10 +10,10 @@
 <br>
 <br>
 <?php echo form_open('user/login'); ?>
-<div class="container">
+<div class="container" style="padding: 10px 400px 30px 400px;" >
     <div class="row">
         <div class="col text-center" >
-            <h1 class="text-center">Login Page</h1>
+            <h1 class="text-center" style="padding: 10px 40px 30px 40px;">LOGIN PAGE</h1>
             <div class="form-group">
                 <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
             </div>

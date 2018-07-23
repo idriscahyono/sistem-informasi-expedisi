@@ -41,4 +41,4 @@
 					$('#example').DataTable();
 				} );
 			</script>
-			<?php $this->load->view('template/footer') ?>
+<?php $this->load->view('template/footer') ?>

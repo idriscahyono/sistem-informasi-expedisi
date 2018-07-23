@@ -27,7 +27,7 @@
 							<ul class="contact_info_list">
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-									<div class="contact_info_text">Jl Kembang Kertas IV No 5 Malang</div>
+									<div class="contact_info_text">Jl Soekarno Hatta No 5 Malang</div>
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>

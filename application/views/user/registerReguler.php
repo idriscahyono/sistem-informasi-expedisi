@@ -9,11 +9,7 @@
 <br>
 <?php echo form_open_multipart('user/registerReguler'); ?>
 <div class="card">
-<!-- 	<?php if ($this->uri->segment('3') != 4): ?> -->
 		<div class="card-header" style="background-color: #b600ff;color:white">Register Pelanggan Reguler</div>
-<!-- 	<?php else: ?>	
-		<div class="card-header" style="background-color: #f2c318;color:white">Register Pelanggan Gold</div>
-	<?php endif ?> -->
 </div>
 <?php echo validation_errors() ?>
 <div class="form-group row">
@@ -68,7 +64,7 @@
 <div class="form-group row">
 	<label for="col-sm-2"></label>
 	<input type="submit" class="btn btn-primary" value="Tambah">
-	<a href="<?php echo site_url('user/register') ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php 	echo site_url('user/logoutTransaction') ?>" class="btn btn-danger">Cancel</a>
 </div>
 </form>
 <!-- load footer -->

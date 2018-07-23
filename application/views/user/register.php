@@ -64,7 +64,7 @@
 <div class="form-group row">
 	<label for="col-sm-2"></label>
 	<input type="submit" class="btn btn-primary" value="Tambah">
-	<a href="<?php echo site_url('user/register') ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo site_url('user/logoutTransaction') ?>" class="btn btn-danger">Cancel</a>
 </div>
 </form>
 <!-- load footer -->
