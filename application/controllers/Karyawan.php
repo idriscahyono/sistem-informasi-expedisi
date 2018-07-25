@@ -39,8 +39,9 @@ class Karyawan extends CI_Controller {
         'Alamat' => $row->Alamat,
         'NoHp' => $row->NoHp,
         'Email' => $row->Email,
-        'Username' => $row->Username,
-        'Password' => $row->Password,
+        'KodePos' => $row->KodePos,
+        'Hobby' => $row->Hobby,
+        'Pendidikan' => $row->Pendidikan,
         'Image' => $row->image,
         );
             $this->load->view('karyawan/read', $data);
@@ -60,8 +61,9 @@ class Karyawan extends CI_Controller {
         $this->form_validation->set_rules('Alamat','Alamat','required');
         $this->form_validation->set_rules('NoHp','NoHp','required');
         $this->form_validation->set_rules('Email','Email','required');
-        $this->form_validation->set_rules('Username','Username','required');
-        $this->form_validation->set_rules('Password','Password','required');
+        $this->form_validation->set_rules('KodePos','KodePos','required');
+        $this->form_validation->set_rules('Hobby','Hobby','required');
+        $this->form_validation->set_rules('Pendidikan','Pendidikan','required');
 
   
         $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
@@ -96,8 +98,9 @@ class Karyawan extends CI_Controller {
         $this->form_validation->set_rules('Alamat','Alamat','required');
         $this->form_validation->set_rules('NoHp','NoHp','required');
         $this->form_validation->set_rules('Email','Email','required');
-        $this->form_validation->set_rules('Username','Username','required');
-        $this->form_validation->set_rules('Password','Password','required');
+        $this->form_validation->set_rules('KodePos','KodePos','required');
+        $this->form_validation->set_rules('Hobby','Hobby','required');
+        $this->form_validation->set_rules('Pendidikan','Pendidikan','required');    
 
         $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
@@ -119,7 +122,7 @@ class Karyawan extends CI_Controller {
             {
                 $upload = $this->Karyawan_model->upload();
                 if($upload['result'] == "success"){ 
-                    $this->karyawan_model->updateData($id,$upload['file']['file_name']);
+                    $this->Karyawan_model->updateData($id,$upload['file']['file_name']);
                     redirect('karyawan');
                 }else{ 
                     $data['error_upload'] = $upload['error'];

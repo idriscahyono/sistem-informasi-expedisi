@@ -4,12 +4,14 @@
         <div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     Pelanggan
+     Transaksi
+    </div>
+    <div class="panel-heading">
+        <a href="<?php echo base_url('Transaction/barang') ?>" class="btn btn-primary mb-3">Tambah</a>
     </div>
     <br>
-    <a href="<?php echo base_url('Transaction/barang') ?>" class="btn btn-primary mb-3">Tambah</a>
+    
     <!-- File Header -->
-
     <table id="example" class="table table-striped table-bordered" width="100%" >
         <thead>
             <tr>
@@ -20,7 +22,7 @@
                 <th>Penerima</th>
                 <th>Telepon</th>
                 <th>Nama Barang</th>
-                <th>Berat</th>
+                <th>Berat/Kg</th>
                 <th>Pelanggan</th>
                 <th>Jenis</th>
                 <th>Harga/kg</th>
@@ -55,13 +57,12 @@
         </tfoot>
     </table>
     <!-- File Footer -->
-
 </main>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#example').DataTable({
             dom: 'Bfrtip',
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis']
         });
     } );
 </script>

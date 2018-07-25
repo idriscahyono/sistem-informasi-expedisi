@@ -55,4 +55,4 @@
 				</div>
 				<?php echo form_close(); ?>
 			</main>
-			<?php $this->load->view('template/footer') ?>
+<?php $this->load->view('template/footer') ?>

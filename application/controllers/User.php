@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	class User extends CI_Controller {
@@ -32,6 +32,7 @@
 				$this->form_validation->set_rules('nama', 'Nama', 'required');
 				$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
 				$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+				$this->form_validation->set_rules('noTelepon', 'noTelepon', 'required');
 				$this->form_validation->set_rules('kodepos', 'Kode Pos', 'required');
 				$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
 				$this->form_validation->set_rules('password', 'Password', 'required');
@@ -67,6 +68,7 @@
 				$this->form_validation->set_rules('nama', 'Nama', 'required');
 				$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
 				$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+				$this->form_validation->set_rules('noTelepon', 'noTelepon', 'required');
 				$this->form_validation->set_rules('kodepos', 'Kode Pos', 'required');
 				$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
 				$this->form_validation->set_rules('password', 'Password', 'required');
@@ -85,6 +87,77 @@
 				}
 			}
 		}
+
+		public function registerKaryawan($level=2)
+		{
+			if($level != 3 || $level != 4){
+				$level = 2;
+			}
+			$levelUser = $this->session->userdata('levelUser');
+			if ($levelUser['level'] == 3)
+			{
+				$this->load->view('user/login');
+			}
+			else
+			{
+				$this->form_validation->set_rules('nama', 'Nama', 'required');
+				$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+				$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+				$this->form_validation->set_rules('noTelepon', 'noTelepon', 'required');
+				$this->form_validation->set_rules('kodepos', 'Kode Pos', 'required');
+				$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
+				$this->form_validation->set_rules('password', 'Password', 'required');
+				$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password]');
+
+				if ($this->form_validation->run() == TRUE) {
+					$encript_password = md5($this->input->post('password'));
+					$this->user_model->registered($encript_password,$level);
+
+					$this->session->set_flashdata('user_registered', 'Selamat Anda Telah Teregistrasi');
+					redirect('user');
+				}
+				else
+				{
+					$this->load->view('user/registerKaryawan');
+				}
+			}
+		}
+
+		public function registerAdmin($level=1)
+		{
+			if($level != 3 || $level != 4){
+				$level = 1;
+			}
+			$levelUser = $this->session->userdata('levelUser');
+			if ($levelUser['level'] == 3)
+			{
+				$this->load->view('user/login');
+			}
+			else
+			{
+				$this->form_validation->set_rules('nama', 'Nama', 'required');
+				$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+				$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+				$this->form_validation->set_rules('noTelepon', 'noTelepon', 'required');
+				$this->form_validation->set_rules('kodepos', 'Kode Pos', 'required');
+				$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
+				$this->form_validation->set_rules('password', 'Password', 'required');
+				$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password]');
+
+				if ($this->form_validation->run() == TRUE) {
+					$encript_password = md5($this->input->post('password'));
+					$this->user_model->registered($encript_password,$level);
+
+					$this->session->set_flashdata('user_registered', 'Selamat Anda Telah Teregistrasi');
+					redirect('user');
+				}
+				else
+				{
+					$this->load->view('user/registerAdmin');
+				}
+			}
+		}
+
 
 		public function login()
 		{
@@ -133,6 +206,7 @@
 
 		public function logout()
 		{
+			session_destroy();
 			$this->session->unset_userdata('loggedin');
 			$this->session->unset_userdata('id_user');
 			$this->session->unset_userdata('username');

@@ -5,28 +5,30 @@ class Admin extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('Admin_model');
+		/*$this->load->model('Admin_model');*/
+		$this->load->model('Karyawan_model');
 		$this->load->helper('form');	
 	}
 
 	public function index()
 	{
-		$data['getData'] = $this->Admin_model->getData();
+		/*$data['getData'] = $this->Admin_model->getData();*/
+		$data['getData'] = $this->Karyawan_model->getData();
 		$levelUser = $this->session->userdata('levelUser');
 		if ($levelUser['level'] == 1)
 		{
-			$this->load->view('admin/admin',$data);
+			$this->load->view('karyawan/karyawan.php',$data);
 		}
 		else if ($levelUser['level'] == 2)
 		{
-			redirect('pelanggan');
+			redirect('user');
 		}
 		else
 		{
 			$this->load->view('user/login');
 		}
 	}
-	public function tambah()
+	/*public function tambah()
 	{
 		$this->load->library("form_validation");
 		$this->form_validation->set_rules('username','Username','required');
@@ -70,7 +72,7 @@ class Admin extends CI_Controller {
 		$data['id'] = $id;
 		$this->Admin_model->hapusData(array('id'=>$id));
 		redirect('admin');
-	}
+	}*/
 }
 
 	

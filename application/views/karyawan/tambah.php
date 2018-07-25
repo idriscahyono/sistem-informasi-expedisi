@@ -4,7 +4,7 @@
         <div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     Tambah Karyawan
+     Tambah Data Karyawan
     </div>
     <br>
 <?php echo form_open_multipart('karyawan/tambah'); ?>
@@ -14,6 +14,13 @@
 	<div class="col-sm-10">
 		<input type="text" name="Nama" class="form-control" id="Nama" value="" placeholder="Nama">
 		<?php echo form_error('Nama') ?> <!-- menampilkan error saat rule Nama gagal -->
+	</div>
+</div>
+<div class="form-group row">
+	<label for="Nama" class="col-sm-2 col-form-label">Pendidikan</label>
+	<div class="col-sm-10">
+		<input type="text" name="Pendidikan" class="form-control" id="Pendidikan" value="" placeholder="Pendidikan">
+		<?php echo form_error('Pendidikan') ?> <!-- menampilkan error saat rule Nama gagal -->
 	</div>
 </div>
 <div class="form-group row">
@@ -31,9 +38,16 @@
 	</div>
 </div>
 <div class="form-group row">
+	<label for="KodePos" class="col-sm-2 col-form-label">KodePos</label>
+	<div class="col-sm-10">
+		<input type="number" name="KodePos" class="form-control" id="Username" value="" placeholder="KodePos">
+		<?php echo form_error('KodePos') ?> <!-- menampilkan error saat rule KodePos gagal -->
+	</div>
+</div>
+<div class="form-group row">
 	<label for="NoHp" class="col-sm-2 col-form-label">NoHp</label>
 	<div class="col-sm-10">
-		<input type="text" name="NoHp" class="form-control" id="NoHp" value="" placeholder="NoHp">
+		<input type="number" name="NoHp" class="form-control" id="NoHp" value="" placeholder="NoHp">
 		<?php echo form_error('NoHp') ?> <!-- menampilkan error saat rule NoHp gagal -->
 	</div>
 </div>
@@ -45,17 +59,10 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label for="Username" class="col-sm-2 col-form-label">Username</label>
+	<label for="Hobby" class="col-sm-2 col-form-label">Hobby</label>
 	<div class="col-sm-10">
-		<input type="text" name="Username" class="form-control" id="Username" value="" placeholder="Username">
-		<?php echo form_error('Username') ?> <!-- menampilkan error saat rule Username gagal -->
-	</div>
-</div>
-<div class="form-group row">
-	<label for="Password" class="col-sm-2 col-form-label">Password</label>
-	<div class="col-sm-10">
-		<input type="text" name="Password" class="form-control" id="Password" value="" placeholder="Password">
-		<?php echo form_error('Password') ?> <!-- menampilkan error saat rule Password gagal -->
+		<input type="text" name="Hobby" class="form-control" id="Password" value="" placeholder="Hobby">
+		<?php echo form_error('Hobby') ?> <!-- menampilkan error saat rule KodePos gagal -->
 	</div>
 </div>
 <div class="form-group">

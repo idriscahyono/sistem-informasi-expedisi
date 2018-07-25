@@ -27,6 +27,13 @@
 	</div>
 </div>
 <div class="form-group row">
+	<label for="noTelepon" class="col-sm-2 col-form-label">No Telepon</label>
+	<div class="col-sm-10">
+	<input type="number" name="noTelepon" class="form-control" placeholder="No Telepon">
+		<?php echo form_error('noTelepon') ?> <!-- menampilkan error saat rule JenisKelamin gagal -->
+	</div>
+</div>
+<div class="form-group row">
 	<label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
 	<div class="col-sm-10">
 	<input type="text" name="alamat" class="form-control" placeholder="Alamat">
@@ -36,7 +43,7 @@
 <div class="form-group row">
 	<label for="Kode Pos" class="col-sm-2 col-form-label">Kode Pos</label>
 	<div class="col-sm-10">
-	<input type="text" name="kodepos" class="form-control" placeholder="Kode Pos">
+	<input type="number" name="kodepos" class="form-control" placeholder="Kode Pos">
 		<?php echo form_error('kodepos') ?> <!-- menampilkan error saat rule NoHp gagal -->
 	</div>
 </div>
@@ -71,10 +78,4 @@
 
 
 </main>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#example').DataTable();
-	} );
-</script>
-
 <?php $this->load->view('template/footerHome'); ?>

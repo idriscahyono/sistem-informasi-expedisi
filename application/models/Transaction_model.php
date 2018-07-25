@@ -48,4 +48,14 @@ class Transaction_model extends CI_Model {
         $this->db->insert('transaksi',$data);
         return $this->db->insert_id();
     }
+
+    public function hapusData($id)
+    {
+
+        $this->db->where('id_transaksi',$id);
+
+        if($this->db->delete("transaksi")){
+            return "Berhasil";
+        }
+    }
 }

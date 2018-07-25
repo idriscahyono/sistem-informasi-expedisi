@@ -45,21 +45,21 @@
 				<div class="form-group row">
 					<label for="alamat_rinci" class="col-sm-2 col-form-label">Alamat Rinci</label>
 					<div class="col-sm-10">
-						<input type="text" name="alamat_rinci" class="form-control" id="alamat_rinci" value="" placeholder="alamat_rinci">
+						<input type="text" name="alamat_rinci" class="form-control" id="alamat_rinci" value="" placeholder="Alamat Rinci">
 						<?php echo form_error('alamat_rinci') ?>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="penerima" class="col-sm-2 col-form-label">Penerima</label>
 					<div class="col-sm-10">
-						<input type="text" name="penerima" class="form-control" id="penerima" value="" placeholder="penerima">
+						<input type="text" name="penerima" class="form-control" id="penerima" value="" placeholder="Penerima">
 						<?php echo form_error('penerima') ?>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="telepon_penerima" class="col-sm-2 col-form-label">Telepon Penerima</label>
 					<div class="col-sm-10">
-						<input type="number" name="telepon_penerima" class="form-control" id="telepon_penerima" value="" placeholder="telepon_penerima">
+						<input type="number" name="telepon_penerima" class="form-control" id="telepon_penerima" value="" placeholder="Telepon Penerima">
 						<?php echo form_error('telepon_penerima') ?>
 					</div>
 				</div>

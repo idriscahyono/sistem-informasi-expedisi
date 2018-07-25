@@ -4,7 +4,7 @@
 		<div class="table-agile-info">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Tambah Barang
+					Tambah Transaksi
 				</div>
 				<br>
 				<?php echo form_open("") ?>

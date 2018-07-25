@@ -51,6 +51,12 @@ class Transaction extends CI_Controller {
 		$data['transaksi'] = $this->Transaction_model->get_transaksi_id($id);
 		$this->load->view("transaksi/complete",$data);
 	}
+
+	public function hapus($id)
+	{
+	    $this->Transaction_model->hapusData($id);
+	    redirect('Transaction');
+	}
 }
 
 	

@@ -17,6 +17,13 @@
 		</div>
 	</div>
 	<div class="form-group row">
+		<label for="Pendidikan" class="col-sm-2 col-form-label">Pendidikan</label>
+		<div class="col-sm-10">
+			<input type="text" name="Pendidikan" class="form-control" id="Pendidikan"  value="<?php echo $getData['Pendidikan'] ?>" placeholder="Pendidikan">
+			<?php echo form_error('Pendidikan') ?> <!-- menampilkan error saat rule Nama gagal -->
+		</div>
+	</div>
+	<div class="form-group row">
 		<label for="JenisKelamin" class="col-sm-2 col-form-label">JenisKelamin</label>
 		<div class="col-sm-10">
 			<input type="text" name="JenisKelamin" class="form-control" id="JenisKelamin"  value="<?php echo $getData['JenisKelamin'] ?>" placeholder="JenisKelamin">
@@ -28,6 +35,13 @@
 		<div class="col-sm-10">
 			<input type="text" name="Alamat" class="form-control" id="Alamat"  value="<?php echo $getData['Alamat'] ?>" placeholder="Alamat">
 			<?php echo form_error('Alamat') ?> <!-- menampilkan error saat rule Alamat gagal -->
+		</div>
+	</div>
+	<div class="form-group row">
+		<label for="KodePos" class="col-sm-2 col-form-label">Kode Pos</label>
+		<div class="col-sm-10">
+			<input type="number" name="KodePos" class="form-control" id="Username"  value="<?php echo $getData['KodePos'] ?>" placeholder="KodePos">
+			<?php echo form_error('KodePos') ?> <!-- menampilkan error saat rule Username gagal -->
 		</div>
 	</div>
 	<div class="form-group row">
@@ -45,17 +59,10 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		<label for="Username" class="col-sm-2 col-form-label">Username</label>
+		<label for="Hobby" class="col-sm-2 col-form-label">Hobby</label>
 		<div class="col-sm-10">
-			<input type="text" name="Username" class="form-control" id="Username"  value="<?php echo $getData['Username'] ?>" placeholder="Username">
-			<?php echo form_error('Username') ?> <!-- menampilkan error saat rule Username gagal -->
-		</div>
-	</div>
-	<div class="form-group row">
-		<label for="Password" class="col-sm-2 col-form-label">Password</label>
-		<div class="col-sm-10">
-			<input type="text" name="Password" class="form-control" id="Password"  value="<?php echo $getData['Password'] ?>" placeholder="Password">
-			<?php echo form_error('Password') ?> <!-- menampilkan error saat rule Password gagal -->
+			<input type="text" name="Hobby" class="form-control" id="Password"  value="<?php echo $getData['Hobby'] ?>" placeholder="Hobby">
+			<?php echo form_error('Hobby') ?> <!-- menampilkan error saat rule Password gagal -->
 		</div>
 	</div>
 

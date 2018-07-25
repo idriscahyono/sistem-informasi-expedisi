@@ -25,14 +25,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/monthly.css">
 
 <!-- Data Table -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap.min.css">
 <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.js">
-
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js">
 <link rel="stylesheet" href="<?php echo base_url()."assets/" ?>css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="<?php echo base_url()."assets/" ?>css/jquery.dataTables.min">
 <script src="assets/js/jquery.min.js"></script>
@@ -95,10 +91,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
-<!--                     <a class="" href="<?php echo base_url('PelangganKaryawan')?>">
-                        <i class="fa fa-group"></i>
-                        <span>Karyawan</span>
-                    </a> -->
                 </li>
                 
                 <li class="sub-menu">
@@ -109,9 +101,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub">
                         <?php $levelUser = $this->session->userdata('levelUser');
                         if ($levelUser['level'] == 1) { ?>
-                        <li><a href="<?php echo base_url('/karyawan')?>">Tambah Karyawan</a></li>
-                        <li><a href="<?php echo base_url('/admin')?>">Tambah Admin</a></li>
-                        <li><a href="<?php echo base_url('/user')?>">Pelanggan</a></li>
+                        <li><a href="<?php echo base_url('/karyawan')?>">Tambah Data Karyawan</a></li>
+                        <li><a href="<?php echo base_url('/user')?>">Tambah User</a></li>
                         <li><a href="<?php echo base_url('/transaction')?>">Transaksi</a></li>
                         <?php } else if ($levelUser['level'] == 2) {?>
                         <li><a href="<?php echo base_url('/user')?>">Pelanggan</a></li>
